@@ -2,6 +2,7 @@ package university.management.system;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.SQLException;
 import java.util.Random;
 import javax.swing.*;
 
@@ -9,7 +10,7 @@ class AddStudent implements ActionListener{
 
     JFrame f;
     JLabel id,id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id15,id16,id17,lab,lab1,lab2;
-    JTextField t,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13;
+    JTextField t,studentName ,fatherName,age,dob,address,t6,t7,t8,t9,t10,t11,t12,t13;
     JButton b,b1,b2,b3;
     JComboBox c1,c2;
     
@@ -46,45 +47,45 @@ class AddStudent implements ActionListener{
         id1.setFont(new Font("serif",Font.BOLD,20));
         id15.add(id1);
 
-        t1=new JTextField();
-        t1.setBounds(200,150,150,30);
-        id15.add(t1);
+        studentName=new JTextField();
+        studentName.setBounds(200,150,150,30);
+        id15.add(studentName);
 
         id2 = new JLabel("Father's Name");
         id2.setBounds(400,150,200,30);
         id2.setFont(new Font("serif",Font.BOLD,20));
         id15.add(id2);
 
-        t2=new JTextField();
-        t2.setBounds(600,150,150,30);
-        id15.add(t2);
+        fatherName=new JTextField();
+        fatherName.setBounds(600,150,150,30);
+        id15.add(fatherName);
 
         id3= new JLabel("Age");
         id3.setBounds(50,200,100,30);
         id3.setFont(new Font("serif",Font.BOLD,20));
         id15.add(id3);
 
-        t3=new JTextField();
-        t3.setBounds(200,200,150,30);
-        id15.add(t3);
+        age=new JTextField();
+        age.setBounds(200,200,150,30);
+        id15.add(age);
 
-        id4= new JLabel("DOB (dd/mm/yyyy)");  
+        id4= new JLabel("DOB (yyyy/mm/dd)");
         id4.setBounds(400,200,200,30);
         id4.setFont(new Font("serif",Font.BOLD,20));
         id15.add(id4);
 
-        t4=new JTextField();
-        t4.setBounds(600,200,150,30);
-        id15.add(t4);
+        dob=new JTextField();
+        dob.setBounds(600,200,150,30);
+        id15.add(dob);
 
         id5= new JLabel("Address");
         id5.setBounds(50,250,100,30);
         id5.setFont(new Font("serif",Font.BOLD,20));
         id15.add(id5);
 
-        t5=new JTextField();
-        t5.setBounds(200,250,150,30);
-        id15.add(t5);
+        address=new JTextField();
+        address.setBounds(200,250,150,30);
+        id15.add(address);
 
         id6= new JLabel("Phone");
         id6.setBounds(400,250,100,30);
@@ -189,11 +190,11 @@ class AddStudent implements ActionListener{
 
     public void actionPerformed(ActionEvent ae){
         
-        String a = t1.getText();
-        String bb = t2.getText();
-        String c = t3.getText();
-        String d = t4.getText();
-        String e = t5.getText();
+        String sName = studentName.getText();
+        String sFather = fatherName.getText();
+        String sAge = age.getText();
+        String sDob = dob.getText();
+        String e = address.getText();
         String ff = t6.getText();
         String g = t7.getText();
         String h = t8.getText();
@@ -202,17 +203,20 @@ class AddStudent implements ActionListener{
         String k = t11.getText();
         String l = (String)c1.getSelectedItem();
         String m = (String)c2.getSelectedItem();
-        
+      //  c2 subject m
+        // sDob dob
         if(ae.getSource() == b){
-            try{
+
                 conn cc = new conn();
-                String q = "insert into student values('"+a+"','"+bb+"','"+c+"','"+d+"','"+e+"','"+ff+"','"+g+"','"+h+"','"+i+"','"+j+"','"+k+"','"+l+"','"+m+"')";
+                String q = "insert into student values('"+sName+"','"+sFather+"','"+sAge+"','"+m+"','"+e+"','"+ff+"','"+g+"','"+h+"','"+i+"','"+j+"','"+k+"','"+l+"','"+sDob+"')";
+            try {
                 cc.s.executeUpdate(q);
-                JOptionPane.showMessageDialog(null,"Student Details Inserted Successfully");
-                f.setVisible(false);
-            }catch(Exception ee){
-                System.out.println("The error is:"+ee);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
             }
+            JOptionPane.showMessageDialog(null,"Student Details Inserted Successfully");
+                f.setVisible(false);
+
         }else if(ae.getSource() == b1){
             f.setVisible(false);
             new Project().setVisible(true);

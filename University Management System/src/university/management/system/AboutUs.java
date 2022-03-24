@@ -13,7 +13,7 @@ public class AboutUs extends JFrame{
     
         public AboutUs() {
             
-            super("About Us - University Name");
+            super("About Us - Lucky Institute of professional studies");
             setBackground(new Color(173, 216, 230));
             setBounds(500, 250, 700, 500);
 		
@@ -22,7 +22,7 @@ public class AboutUs extends JFrame{
             contentPane.setLayout(null);
 
             JLabel l1 = new JLabel("New label");
-            ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("university/management/system/icons/logo.jpg"));
+            ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("university/management/system/icons/lucky.jpg"));
             Image i2 = i1.getImage().getScaledInstance(250, 100,Image.SCALE_DEFAULT);
             ImageIcon i3 = new ImageIcon(i2);
             l1 = new JLabel(i3);
@@ -49,7 +49,7 @@ public class AboutUs extends JFrame{
             contentPane.add(l5);
 
 
-            JLabel l6 = new JLabel("Developed By : Code for Interview");
+            JLabel l6 = new JLabel("Developed By : Ishwar parihar");
             l6.setFont(new Font("Trebuchet MS", Font.BOLD, 30));
             l6.setBounds(70, 198, 600, 35);
             contentPane.add(l6);
@@ -59,18 +59,18 @@ public class AboutUs extends JFrame{
             l7.setBounds(70, 260, 600, 34);
             contentPane.add(l7);
 
-            JLabel l8 = new JLabel("Contact : codeforinterview01@gmail.com");
+            JLabel l8 = new JLabel("Contact : pariharishwer26102000@gmail.com");
             l8.setFont(new Font("Trebuchet MS", Font.BOLD, 20));
             l8.setBounds(70, 290, 600, 34);
             contentPane.add(l8);
 
-            JLabel l9 = new JLabel("Education - B.Tech (Computer Science)");
+            JLabel l9 = new JLabel("Education - BCA (Bachelor of Computer Application)");
             l9.setFont(new Font("Trebuchet MS", Font.BOLD , 20));
             l9.setBounds(70, 320, 600, 34);
             contentPane.add(l9);
 
 
-            JLabel l10 = new JLabel("Phone - +91 9999 999999");
+            JLabel l10 = new JLabel("Phone - +916377265840");
             l10.setForeground(new Color(47, 79, 79));
             l10.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 18));
             l10.setBounds(70, 400, 600, 34);

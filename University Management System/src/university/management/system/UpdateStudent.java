@@ -15,7 +15,7 @@ class UpdateStudent implements ActionListener{
 
     JFrame f;
     JLabel id,id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id15,lab,lab1,lab2;
-    JTextField t,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14;
+    JTextField t,studentName,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14;
     JButton b,b1,b2; 
     String id_emp;
 
@@ -55,9 +55,9 @@ class UpdateStudent implements ActionListener{
         id1.setFont(new Font("serif",Font.BOLD,20));
         f.add(id1);
 
-        t1=new JTextField();
-        t1.setBounds(200,170,150,30);
-        f.add(t1);
+        studentName=new JTextField();
+        studentName.setBounds(200,170,150,30);
+        f.add(studentName);
 
         id2 = new JLabel("Father's Name");
         id2.setBounds(400,170,200,30);
@@ -195,7 +195,7 @@ class UpdateStudent implements ActionListener{
         if(ae.getSource()==b){
             try{
                 conn con = new conn();
-                String str = "update student set name='"+t1.getText()+"',fathers_name='"+t2.getText()+"',age='"+t3.getText()+"', dob='"+t4.getText()+"',address='"+t5.getText()+"',phone='"+t6.getText()+"',email='"+t7.getText()+"',class_x='"+t8.getText()+"',class_xii='"+t9.getText()+"',aadhar='"+t10.getText()+"',course='"+t13.getText()+"',branch='"+t14.getText()+"' where rollno='"+t12.getText()+"'";
+                String str = "update student set name='"+studentName.getText()+"',father_name='"+t2.getText()+"',age='"+t3.getText()+"', dob='"+t4.getText()+"',address='"+t5.getText()+"',phone='"+t6.getText()+"',email='"+t7.getText()+"',class_x='"+t8.getText()+"',class_xii='"+t9.getText()+"',aadhar='"+t10.getText()+"',course='"+t13.getText()+"',branch='"+t14.getText()+"' where rollno='"+t12.getText()+"'";
                 con.s.executeUpdate(str);
                 JOptionPane.showMessageDialog(null,"successfully updated");
                 f.setVisible(false);
@@ -218,7 +218,7 @@ class UpdateStudent implements ActionListener{
                     f.setVisible(true);
              
 
-                    t1.setText(rs.getString(1));
+                    studentName.setText(rs.getString(1));
                     t2.setText(rs.getString(2));
                     t3.setText(rs.getString(3));
                     t4.setText(rs.getString(4));

@@ -9,7 +9,7 @@ class AddTeacher implements ActionListener{
 
     JFrame f;
     JLabel id,id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id15,id16,id17,lab,lab1,lab2;
-    JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11;
+    JTextField studentName,t2,t3,t4,t5,t6,t7,t8,t9,studentName0,studentName1;
     JButton b,b1,b2,b3;
     JComboBox c1,c2;
 
@@ -45,9 +45,9 @@ class AddTeacher implements ActionListener{
         id1.setFont(new Font("serif",Font.BOLD,20));
         id15.add(id1);
 
-        t1=new JTextField();
-        t1.setBounds(200,150,150,30);
-        id15.add(t1);
+        studentName=new JTextField();
+        studentName.setBounds(200,150,150,30);
+        id15.add(studentName);
 
         id2 = new JLabel("Father's Name");
         id2.setBounds(400,150,200,30);
@@ -127,9 +127,9 @@ class AddTeacher implements ActionListener{
         id10.setFont(new Font("serif",Font.BOLD,20));
         id15.add(id10);
 
-        t10=new JTextField();
-        t10.setBounds(600,350,150,30);
-        id15.add(t10);
+        studentName0=new JTextField();
+        studentName0.setBounds(600,350,150,30);
+        id15.add(studentName0);
 
         
         lab=new JLabel("Education");
@@ -159,10 +159,10 @@ class AddTeacher implements ActionListener{
         id11.setFont(new Font("serif",Font.BOLD,20));
         id15.add(id11);
 
-        t11=new JTextField();
-        t11.setText("101"+first);
-        t11.setBounds(600,450,150,30);
-        id15.add(t11);
+        studentName1=new JTextField();
+        studentName1.setText("101"+first);
+        studentName1.setBounds(600,450,150,30);
+        id15.add(studentName1);
         
         b = new JButton("Submit");
         b.setBackground(Color.BLACK);
@@ -189,7 +189,7 @@ class AddTeacher implements ActionListener{
 
     public void actionPerformed(ActionEvent ae){
         
-        String a = t1.getText();
+        String a = studentName.getText();
         String bb = t2.getText();
         String c = t3.getText();
         String d = t4.getText();
@@ -198,9 +198,9 @@ class AddTeacher implements ActionListener{
         String g = t7.getText();
         String h = t8.getText();
         String i = t9.getText();
-        String j = t10.getText();
+        String j = studentName0.getText();
         String k = (String)c1.getSelectedItem();
-        String l = t11.getText();
+        String l = studentName1.getText();
         String m = (String)c2.getSelectedItem();
         
         if(ae.getSource() == b){

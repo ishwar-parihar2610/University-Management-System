@@ -8,7 +8,7 @@ import java.sql.*;
 public class EnterMarks extends JFrame implements ActionListener{
 
     JLabel l1,l2,l3,l4;
-    JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11;
+    JTextField studentName,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11;
     JButton b1;
 
     EnterMarks(){
@@ -26,9 +26,9 @@ public class EnterMarks extends JFrame implements ActionListener{
         l2.setBounds(50,70,200,40);
         add(l2);
 
-        t1 = new JTextField();
-        t1.setBounds(180,80,200,20);
-        add(t1);
+        studentName = new JTextField();
+        studentName.setBounds(180,80,200,20);
+        add(studentName);
 
         l3 = new JLabel("Enter Subject");
         l3.setBounds(50,150,200,40);
@@ -94,8 +94,8 @@ public class EnterMarks extends JFrame implements ActionListener{
             if(ae.getSource() == b1){
                 conn c1 = new conn();
 
-                String s1 = "insert into subject values('"+t1.getText()+"','"+t2.getText()+"','"+t4.getText()+"','"+t6.getText()+"','"+t8.getText()+"','"+t10.getText()+"')";
-                String s2 = "insert into marks values('"+t1.getText()+"','"+t3.getText()+"','"+t5.getText()+"','"+t7.getText()+"','"+t9.getText()+"','"+t11.getText()+"')";
+                String s1 = "insert into subject values('"+studentName.getText()+"','"+t2.getText()+"','"+t4.getText()+"','"+t6.getText()+"','"+t8.getText()+"','"+t10.getText()+"')";
+                String s2 = "insert into marks values('"+studentName.getText()+"','"+t3.getText()+"','"+t5.getText()+"','"+t7.getText()+"','"+t9.getText()+"','"+t11.getText()+"')";
 
                 c1.s.executeUpdate(s1);
                 c1.s.executeUpdate(s2);

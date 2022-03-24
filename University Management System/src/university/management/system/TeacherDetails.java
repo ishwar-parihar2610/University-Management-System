@@ -71,7 +71,7 @@ public class TeacherDetails extends JFrame implements ActionListener{
             ResultSet rs  = c1.s.executeQuery(s1);
             while(rs.next()){
                 y[i][j++]=rs.getString("name");
-                y[i][j++]=rs.getString("fathers_name");
+                y[i][j++]=rs.getString("father_name");
                 y[i][j++]=rs.getString("age");
                 y[i][j++]=rs.getString("dob");
                 y[i][j++]=rs.getString("address");

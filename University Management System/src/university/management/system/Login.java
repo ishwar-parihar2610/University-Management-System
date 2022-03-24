@@ -15,7 +15,7 @@ public class Login extends JFrame implements ActionListener{
 
     JFrame f;
     JLabel l1,l2;
-    JTextField t1;
+    JTextField studentName;
     JPasswordField t2;
     JButton b1,b2;
 
@@ -34,9 +34,9 @@ public class Login extends JFrame implements ActionListener{
         l2.setBounds(40,70,100,30);
         add(l2);
  
-        t1=new JTextField();
-        t1.setBounds(150,20,150,30);
-        add(t1);
+        studentName=new JTextField();
+        studentName.setBounds(150,20,150,30);
+        add(studentName);
 
         t2=new JPasswordField();
         t2.setBounds(150,70,150,30);
@@ -79,7 +79,7 @@ public class Login extends JFrame implements ActionListener{
 
         try{
             conn c1 = new conn();
-            String u = t1.getText();
+            String u = studentName.getText();
             String v = t2.getText();
             
             String q = "select * from login where username='"+u+"' and password='"+v+"'";

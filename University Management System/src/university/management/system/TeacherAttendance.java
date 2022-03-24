@@ -8,7 +8,7 @@ import java.awt.event.*;
 public class TeacherAttendance extends JFrame implements ActionListener{
     
     JLabel l1,l2,l3,l4,l5,l6,l7;
-    JTextField t1,t2,t3,t4,t5,t6,t7;
+    JTextField studentName,t2,t3,t4,t5,t6,t7;
     JButton b1,b2;
     Choice c2,fh,sh;
     

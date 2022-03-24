@@ -10,7 +10,7 @@ import javax.swing.*;
 import javax.swing.border.*;
 import java.sql.*;
 import java.awt.event.*;
-import net.proteanit.sql.DbUtils;
+
 
 public class ExaminationDetails extends JFrame implements ActionListener{
 
@@ -27,7 +27,7 @@ public class ExaminationDetails extends JFrame implements ActionListener{
             PreparedStatement st = con.c.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
 
-            table.setModel(DbUtils.resultSetToTableModel(rs));
+          //  table.setModel(DbUtils.resultSetToTableModel(rs));
             rs.close();
             st.close();
             con.c.close();

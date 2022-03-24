@@ -15,7 +15,7 @@ import java.sql.*;
 public class StudentDetails extends JFrame implements ActionListener{
  
     JLabel l1,l2,l3;
-    JTable t1;
+    JTable studentName;
     JButton b1,b2,b3;
     JTextField t2;
     String x[] = {"Name","Father's Name","Age","Date of Birth","Address","Phone","Email","Class X(%)", "Class XII(%)", "Aadhar No","Roll No","Course","Branch"};
@@ -75,7 +75,7 @@ public class StudentDetails extends JFrame implements ActionListener{
             ResultSet rs  = c1.s.executeQuery(s1);
             while(rs.next()){
                 y[i][j++]=rs.getString("name");
-                y[i][j++]=rs.getString("fathers_name");
+                y[i][j++]=rs.getString("father_name");
                 y[i][j++]=rs.getString("age");
                 y[i][j++]=rs.getString("dob");
                 y[i][j++]=rs.getString("address");
@@ -90,13 +90,13 @@ public class StudentDetails extends JFrame implements ActionListener{
                 i++;
                 j=0;
             }
-            t1 = new JTable(y,x);
+            studentName = new JTable(y,x);
             
         }catch(Exception e){
             e.printStackTrace();
         }
         
-        JScrollPane sp = new JScrollPane(t1);
+        JScrollPane sp = new JScrollPane(studentName);
         sp.setBounds(20,20,1200,330);
         add(sp);
         

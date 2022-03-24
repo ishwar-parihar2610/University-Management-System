@@ -15,7 +15,7 @@ import java.util.*;
 public class StudentFeeForm extends JFrame implements ActionListener{
 
     private JPanel contentPane;
-    private JTextField t1,t2,t3;
+    private JTextField studentName,t2,t3;
     private JComboBox comboBox, comboBox_1, comboBox_2, comboBox_3;
     JButton b1,b2;
     Choice c1;
@@ -123,12 +123,12 @@ public class StudentFeeForm extends JFrame implements ActionListener{
 	comboBox_2.setBounds(176, 244, 154, 20);
 	contentPane.add(comboBox_2);
         
-        t1 = new JTextField();
-	t1.setForeground(new Color(47, 79, 79));
-	t1.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
-	t1.setColumns(10);
-	t1.setBounds(176, 275, 154, 20);
-        add(t1);
+        studentName = new JTextField();
+	studentName.setForeground(new Color(47, 79, 79));
+		studentName.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		studentName.setColumns(10);
+		studentName.setBounds(176, 275, 154, 20);
+        add(studentName);
         
 	b1 = new JButton("Pay");
 	b1.addActionListener(this);
@@ -187,7 +187,7 @@ public class StudentFeeForm extends JFrame implements ActionListener{
 		st.setString(4, (String) comboBox_3.getSelectedItem());
 		st.setString(5, (String) comboBox.getSelectedItem());
 		st.setString(6, (String) comboBox_2.getSelectedItem());
-		st.setString(7, t1.getText());
+		st.setString(7, studentName.getText());
 
 		int i = st.executeUpdate();
 		if (i > 0){

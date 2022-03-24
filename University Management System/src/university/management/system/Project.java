@@ -6,11 +6,11 @@ import javax.swing.*;
 
 public class Project extends JFrame implements ActionListener{
     Project(){
-        super("University Management System");
+        super("Lucky Institute Of professional Studies");
         
         setSize(1920,1030);
         
-        ImageIcon ic =  new ImageIcon(ClassLoader.getSystemResource("university/management/system/icons/third.jpg"));
+        ImageIcon ic =  new ImageIcon(ClassLoader.getSystemResource("university/management/system/icons/lucky.jpg"));
         Image i3 = ic.getImage().getScaledInstance(1900, 950,Image.SCALE_DEFAULT);
         ImageIcon icc3 = new ImageIcon(i3);
         JLabel l1 = new JLabel(icc3);

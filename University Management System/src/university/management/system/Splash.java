@@ -5,7 +5,9 @@ import javax.swing.*;
 
 public class Splash{
     public static void main(String s[]){
-        Frame f = new Frame("Sadhana University"); 
+        conn conn=new conn();
+
+        Frame f = new Frame("Lucky Institute of professional studies");
         f.setVisible(true); 
         int i;
         int x=1;
@@ -20,18 +22,18 @@ public class Splash{
     }
 }
 class Frame extends JFrame implements Runnable{
-    Thread t1;
+    Thread studentName;
     Frame(String s){
         super(s);
         setLayout(new FlowLayout());
-        ImageIcon c1 = new ImageIcon(ClassLoader.getSystemResource("university/management/system/icons/first.jpg"));
+        ImageIcon c1 = new ImageIcon(ClassLoader.getSystemResource("university/management/system/icons/lucky.jpg"));
         Image i1 = c1.getImage().getScaledInstance(1000, 700,Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i1);
         
         JLabel m1 = new JLabel(i2);
         add(m1);
-        t1 = new Thread(this);
-        t1.start();
+        studentName = new Thread(this);
+        studentName.start();
     }
     public void run(){
         try{
