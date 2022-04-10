@@ -194,21 +194,35 @@ class AddStudent implements ActionListener{
         String sFather = fatherName.getText();
         String sAge = age.getText();
         String sDob = dob.getText();
-        String e = address.getText();
-        String ff = t6.getText();
-        String g = t7.getText();
-        String h = t8.getText();
-        String i = t9.getText();
-        String j = t10.getText();
-        String k = t11.getText();
-        String l = (String)c1.getSelectedItem();
-        String m = (String)c2.getSelectedItem();
+        String addressText = address.getText();
+        String mobileNumber = t6.getText();
+        String studentGmailId = t7.getText();
+        String studentMaticPercentage = t8.getText();
+        String higherPercentage = t9.getText();
+        String aadharNumber = t10.getText();
+        String studentRollNumber= t11.getText();
+        String studentSelectedCourse = (String)c1.getSelectedItem();
+        String branch = (String)c2.getSelectedItem();
+
+
+        System.out.println(" stundent name is ==> "+sName);
+        System.out.println(" stundent father name is ==> "+sFather);
+        System.out.println(" stundent age is ==> "+sAge);
+        System.out.println(" date of birth age is ==> "+sDob);
+        System.out.println(" address is ==> "+addressText);
+        System.out.println(" mobile number is ==> "+mobileNumber);
+        System.out.println(" mstudent gmail id is ==> "+studentGmailId);
+        System.out.println(" higherPercentage ==> "+higherPercentage);
+        System.out.println(" aadharNumber ==> "+aadharNumber);
+        System.out.println(" studentRollNumber ==> "+studentRollNumber);
+        System.out.println(" studentSelectedCourse ==> "+studentSelectedCourse);
+        System.out.println(" branch ==> "+branch);
       //  c2 subject m
         // sDob dob
         if(ae.getSource() == b){
 
                 conn cc = new conn();
-                String q = "insert into student values('"+sName+"','"+sFather+"','"+sAge+"','"+m+"','"+e+"','"+ff+"','"+g+"','"+h+"','"+i+"','"+j+"','"+k+"','"+l+"','"+sDob+"')";
+                String q = "insert into student values('"+sName+"','"+sFather+"','"+sAge+"','"+addressText+"','"+studentGmailId+"','"+studentMaticPercentage+"','"+higherPercentage+"','"+aadharNumber+"','"+studentRollNumber+"','"+studentSelectedCourse+"','"+branch+"','"+mobileNumber+"','"+sDob+"')";
             try {
                 cc.s.executeUpdate(q);
             } catch (SQLException throwables) {

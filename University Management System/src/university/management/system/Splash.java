@@ -1,7 +1,9 @@
 package university.management.system;
 
-import java.awt.*;
+
 import javax.swing.*;
+import java.awt.*;
+
 
 public class Splash{
     public static void main(String s[]){
@@ -11,14 +13,16 @@ public class Splash{
         f.setVisible(true); 
         int i;
         int x=1;
-        for(i=2;i<=600;i+=4,x+=1){
-            f.setLocation((800-((i+x)/2) ),500-(i/2));
-            f.setSize(i+3*x,i+x/2);
-            
-            try{
-                Thread.sleep(10);
-            }catch(Exception e) { }
-        }
+        f.setLocation(400,200);
+        f.setSize(1000,600);
+//        for(i=2;i<=600;i+=4,x+=1){
+//            f.setLocation((800-((i+x)/2) ),500-(i/2));
+//            f.setSize(i+3*x,i+x/2);
+//
+//            try{
+//                Thread.sleep(10);
+//            }catch(Exception e) { }
+//        }
     }
 }
 class Frame extends JFrame implements Runnable{
